@@ -2,7 +2,7 @@
   <meta name='turbolinks-visit-control' content='reload'>
   <script>
     document.addEventListener("DOMContentLoaded", function(){
-      initMap(<%=@device.latitude%>, <%=@device.longitude%>)
+      initMap(<%=@device.latest_latitude%>, <%=@device.latest_longitude%>)
     });
   </script>
 <% end %>
@@ -10,23 +10,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @device.name %>
+  <strong>Device IMEI:</strong>
+  <%= @device.imei_no %>
 </p>
 
 <p>
-  <strong>Latitude:</strong>
-  <%= @device.latitude %>
+  <strong>Device Make:</strong>
+  <%= @device.make %>
 </p>
 
 <p>
-  <strong>Longitude:</strong>
-  <%= @device.longitude %>
+  <strong>Device Model:</strong>
+  <%= @device.model %>
+</p>
+
+<p>
+  <strong>Latest Latitude:</strong>
+  <%= @device.latest_latitude %>
+</p>
+
+<p>
+  <strong>Latest Longitude:</strong>
+  <%= @device.latest_longitude %>
 </p>
 
 <p>
     <div id="map"></div>
 </p>
 
-<%= link_to 'Edit', edit_device_path(@device) %> |
 <%= link_to 'Back', devices_path %>

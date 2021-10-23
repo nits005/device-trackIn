@@ -6,7 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Device.create!([
-    { "name": "Moto G40 Fusion", "latitude": "51.501564","longitude": "-0.141944"},
-    { "name": "iPhone 12 Pro", "latitude": "51.499581", "longitude": "-0.127309"},
-    { "name": "Good Pixel 6", "latitude": "51.500792", "longitude": "-0.124613"}
+    { "make": "Moto", "model": "G40 Fusion", "imei_no": "10959593029", "serial_no": "919VDV456" },
+    { "make": "Apple", "model": "iPhone 12 Pro", "imei_no": "11009593029", "serial_no": "364YFY123" }
 ])
+
+Device.all.each do |d|
+    DeviceLocation.create!([
+        {device_imei_no: d.imei_no, location_at: Time.now - 15.minute, latitude: 40.755884, longitude: -73.978504, address: '565 5 Ave, Manhattan, New York, NY, USA'},
+        {device_imei_no: d.imei_no, location_at: Time.now - 1.hour, latitude: 22.693597, longitude: 75.83001, address: 'No.1079 Sudama Nagar, Inside Smruti Dwar, indore'}
+    ])
+end

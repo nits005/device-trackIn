@@ -10,14 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_22_172826) do
+ActiveRecord::Schema.define(version: 2021_10_23_132452) do
 
-  create_table "Devices", force: :cascade do |t|
-    t.string "name"
-    t.decimal "latitude"
-    t.decimal "longitude"
+  create_table "device_locations", force: :cascade do |t|
+    t.integer "device_imei_no"
+    t.datetime "location_at", null: false
+    t.decimal "latitude", null: false
+    t.decimal "longitude", null: false
+    t.string "address"
+    t.index ["device_imei_no"], name: "index_device_locations_on_device_imei_no"
+  end
+
+  create_table "devices", primary_key: "imei_no", id: :string, force: :cascade do |t|
+    t.string "serial_no", null: false
+    t.string "make", null: false
+    t.string "model", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["imei_no"], name: "index_devices_on_imei_no"
   end
 
 end
