@@ -17,6 +17,11 @@
 
 - start server by running command `rails s`
 - visit `localhost:3000` in browser
+- User Credentials
+    ```
+    Email    - test@yopmail.com
+    Password - 12345678
+    ```
 
 # ToDo
 

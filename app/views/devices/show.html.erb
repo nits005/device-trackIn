@@ -32,8 +32,30 @@
   <%= @device.latest_longitude %>
 </p>
 
-<p>
-    <div id="map"></div>
-</p>
+<div class="container-fluid" style="padding-left:0px">
+  <div class="row" style="height:100%;">
+    <div class="col-sm-6">
+      <div id="map" style="height:300px;width: 500px;"></div>
+    </div>
+    <div class="col-sm-6">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Location At</th>
+            <th scope="col">Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @device.device_locations.each do |location| %>
+            <tr>
+              <td><%= location.location_at %></td>
+              <td><%= location.address %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+</div>
 
+<br>
 <%= link_to 'Back', devices_path %>

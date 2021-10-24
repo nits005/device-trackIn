@@ -14,7 +14,9 @@ Device.create!([
 
 Device.all.each do |d|
     DeviceLocation.create!([
-        {device_imei_no: d.imei_no, location_at: Time.now - 15.minute, latitude: 40.755884, longitude: -73.978504, address: '565 5 Ave, Manhattan, New York, NY, USA'},
-        {device_imei_no: d.imei_no, location_at: Time.now - 1.hour, latitude: 22.693597, longitude: 75.83001, address: 'No.1079 Sudama Nagar, Inside Smruti Dwar, indore'}
+        {device_imei_no: d.imei_no, location_at: Time.now - 15.minute, latitude: 22.688980, longitude: 75.833060, address: 'Mahadev market, 1481 D-sector, 60 Feet Rd, Sudama Nagar, Indore, Madhya Pradesh 452009'},
+        {device_imei_no: d.imei_no, location_at: Time.now - 30.minute, latitude: 22.693597, longitude: 75.83001, address: 'No.1079 Sudama Nagar, Inside Smruti Dwar, indore'},
+        {device_imei_no: d.imei_no, location_at: Time.now - 45.minute, latitude: 22.682250, longitude: 75.821470, address: '981, Sudama Nagar Main Rd, Near Mahaveet Gate, Footi Kothi, Ranjeet Hanuman Rd, Indore, Madhya Pradesh 452009'},
+        {device_imei_no: d.imei_no, location_at: Time.now - 1.hour, latitude: 22.682250, longitude: 75.836190, address: 'MRPP+M7 Chanakyapuri, Indore, Madhya Pradesh'}
     ])
 end
