@@ -6,6 +6,7 @@ class CreateDevices < ActiveRecord::Migration[5.2]
       t.string :serial_no, null: false
       t.string :make, null: false
       t.string :model, null: false
+      t.references :user
 
       t.timestamps
     end

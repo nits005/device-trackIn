@@ -5,9 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user = User.create(email: 'test@yopmail.com', password: 12345678, password_confirmation: 12345678)
+
 Device.create!([
-    { "make": "Moto", "model": "G40 Fusion", "imei_no": "10959593029", "serial_no": "919VDV456" },
-    { "make": "Apple", "model": "iPhone 12 Pro", "imei_no": "11009593029", "serial_no": "364YFY123" }
+    { "make": "Moto", "model": "G40 Fusion", "imei_no": "10959593029", "serial_no": "919VDV456", "user_id": user.id },
+    { "make": "Apple", "model": "iPhone 12 Pro", "imei_no": "11009593029", "serial_no": "364YFY123", "user_id": user.id }
 ])
 
 Device.all.each do |d|
