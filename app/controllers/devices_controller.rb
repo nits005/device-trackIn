@@ -4,7 +4,7 @@ class DevicesController < ApplicationController
   # GET /devices
   # GET /devices.json
   def index
-    @devices = Device.includes(:device_locations)
+    @devices = current_user.devices.includes(:device_locations)
   end
 
   # GET /devices/1

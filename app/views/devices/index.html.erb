@@ -1,30 +1,33 @@
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Device IMEI</th>
-      <th>Device Make</th>
-      <th>Device Model</th>
-      <th>Latest Latitude</th>
-      <th>Latest Longitude</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @devices.each do |device| %>
+<% if @devices.present? %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= device.imei_no %></td>
-        <td><%= device.make %></td>
-        <td><%= device.model %></td>
-        <td><%= device.latest_latitude %></td>
-        <td><%= device.latest_longitude %></td>
-        <td><%= link_to 'Show', device %></td>
-        <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Device IMEI</th>
+        <th>Device Make</th>
+        <th>Device Model</th>
+        <th>Latest Latitude</th>
+        <th>Latest Longitude</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @devices.each do |device| %>
+        <tr>
+          <td><%= device.imei_no %></td>
+          <td><%= device.make %></td>
+          <td><%= device.model %></td>
+          <td><%= device.latest_latitude %></td>
+          <td><%= device.latest_longitude %></td>
+          <td><%= link_to 'Show', device %></td>
+          <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+<% else %>
+  <p class="alert alert-danger">No devices found</p>
+<% end %>
 
