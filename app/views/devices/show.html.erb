@@ -48,7 +48,11 @@
         <tbody>
           <% @device.device_locations.each do |location| %>
             <tr>
-              <td><%= location.location_at %></td>
+              <td>
+                <a onclick="refreshMarker(<%=location.latitude%>, <%=location.longitude%>)">
+                  <%= location.location_at %>
+                </a>
+              </td>
               <td><%= location.address %></td>
             </tr>
           <% end %>

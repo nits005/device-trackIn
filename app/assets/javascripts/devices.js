@@ -17,6 +17,10 @@ function initMap(lat, lng) {
 
 }
 
+function refreshMarker(latitude, longitude) {
+    initMap(latitude, longitude);
+}
+
 function initMap2() {
     var lat = document.getElementById('device_latitude').value;
     var lng = document.getElementById('device_longitude').value;

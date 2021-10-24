@@ -9,7 +9,7 @@ user = User.create(email: 'test@yopmail.com', password: 12345678, password_confi
 
 Device.create!([
     { "make": "Moto", "model": "G40 Fusion", "imei_no": "10959593029", "serial_no": "919VDV456", "user_id": user.id },
-    { "make": "Apple", "model": "iPhone 12 Pro", "imei_no": "11009593029", "serial_no": "364YFY123", "user_id": user.id }
+    { "make": "Google", "model": "Pixel 4a", "imei_no": "11009593029", "serial_no": "364YFY123", "user_id": user.id }
 ])
 
 Device.all.each do |d|
