@@ -1,0 +1,34 @@
+<div class="login-container">
+  <div class="login-page">
+
+    <div class="form">
+
+      <div class="login">
+        <div class="login-header">
+          <h3>LOGIN</h3>
+          <p>Please enter your credentials to login.</p>
+        </div>
+      </div>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "username" %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "current-password", placeholder: "password" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Log in", class: "button" %>
+        </div>
+      <% end %>
+
+      <p class="message">
+        Not registered? <%= link_to "Create an account", new_user_registration_path, :class => 'navbar-link'  %>
+      </p>
+
+    </div>
+
+  </div>  
+</div>
